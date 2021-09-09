@@ -45,5 +45,11 @@ for (var i = 0; i < passwordLengthUser; i++) {
 password = passwordChar[Math.floor(Math.random() * passwordChar.length)]
 }
 }
+function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
 
-generateBtn.addEventListener("click", generatePassword);
+}  
+
+generateBtn.addEventListener("click", writePassword);
