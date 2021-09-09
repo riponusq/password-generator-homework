@@ -22,34 +22,47 @@ alert("Password no more than 128 characters!");
 return ""
 }
 
-var lowercaseCharactersChoice = confirm("some lowercase characters?");
+var lowercaseCharactersChoice = confirm("To make it secure put some lowercase characters?");
 if (lowercaseCharactersChoice) {
 passwordChar += lowercaseChar;
 }
 
-var uppercaseCharactersChoice = confirm("some uppercase letters?");
+var uppercaseCharactersChoice = confirm("for secure some uppercase characters?");
 if (uppercaseCharactersChoice) {
 passwordChar += uppercaseChar;
 }
 
-var numericalCharactersChoice = confirm("some numerical characters");
+var numericalCharactersChoice = confirm("and also some numerical characters");
 if (numericalCharactersChoice) {
 passwordChar += numericalChar;
 }
 
-var specialCharacterChoice = confirm(" to make it more secure pur some symbols");
+var specialCharacterChoice = confirm(" To make it more secure pur some symbols");
 if (specialCharacterChoice) {
 passwordChar += specialChar;
 }
 for (var i = 0; i < passwordLengthUser; i++) {
 password = passwordChar[Math.floor(Math.random() * passwordChar.length)]
 }
+return password;
 }
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
 
+<<<<<<< HEAD
 }  
+=======
+function writePassword() {
+    
+    var password = generatePassword();
+    console.log(password);
+    var passwordText = document.querySelector("#password");
+  
+    passwordText.value = password
+  
+  }
+>>>>>>> fd0ec8238a632e75bb61d55f793bdd39546dc183
 
 generateBtn.addEventListener("click", writePassword);
